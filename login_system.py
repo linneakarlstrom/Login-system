@@ -45,15 +45,15 @@ while login:
 
         if password != "Cocoban123":
             password_again = input("Incorrect password. Would you like to try to login again? Yes or no?")
-            if password_again == "Yes" or password_again == "yes":
+            if password_again.lower() == "yes":
                 login = True
-            if password_again == "no" or password_again == "No": 
+            if password_again.lower() == "no": 
                 quit()
             
     else:
         username_again = input("Username incorrect. Would you like to try again? Yes or no?")
-        if username_again == "yes" or username_again == "Yes":
+        if username_again.lower() == "yes":
             login = True
-        if username_again == "No" or  username_again == "no":
+        if username_again.lower() == "no":
             print("Thank you for trying! Welcome back later")
             quit()                                                                                                                      
