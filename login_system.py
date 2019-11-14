@@ -55,5 +55,5 @@ while login:
         if username_again.lower() == "yes":
             login = True
         if username_again.lower() == "no":
-            print("Thank you for trying! Welcome back later")
+            print("Thank you for trying, welcome back later! ")
             quit()                                                                                                                      
