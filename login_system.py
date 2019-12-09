@@ -4,6 +4,10 @@ users = [
     {
         "username": "ICYLGR01",
         "password": "Cocoban123", 
+    },
+    {
+        "username": "skalman",
+        "password": "fruktsallad"
     }
 ]
 
@@ -13,8 +17,18 @@ users = [
 #     return # de nya keyvalue paren läggs in i users
 
 def login(username, password):
-    return username == "ICYLGR01" and password == "Cocoban123"   # det ska läggas in från dictionaryn och sedan kunna användas
+    for u in users:
+        if u["username"] == username and u["password"] == password:
+            return True
+        else:
+            return False
+
+    # return username == users[0+1] password == users[0+1+1]
+    # return username == "ICYLGR01" and password == "Cocoban123"   # det ska läggas in från dictionaryn och sedan kunna användas
     # om username är ICYLGR01 och lösenordet är Cocoban123 returnera True, annars returnera False
+
+def register():
+    return
 
 login_in = True
 while login_in:
@@ -25,6 +39,6 @@ while login_in:
          quiz.start()  
          # quizet startas
     else:
-        print("Incorrect")
+        print("Incorrect, you may try again.")
         login_in = True
         # startas om
