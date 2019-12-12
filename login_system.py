@@ -20,8 +20,8 @@ def login(username, password):
     for u in users:
         if u["username"] == username and u["password"] == password:
             return True
-        else:
-            return False
+        
+    return False
 
     # return username == users[0+1] password == users[0+1+1]
     # return username == "ICYLGR01" and password == "Cocoban123"   # det ska läggas in från dictionaryn och sedan kunna användas
