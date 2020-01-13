@@ -16,7 +16,7 @@ def start():
     ("If your car begins to hydroplane (Hydroplaning means that water separates the tires from the ground and causes it to lose traction. You feel out of control.) you should:\
     \nA. Reduce your speed and let the car decelerate.\nB. Pump the breaks repeatedly.\nC. Immediatly slam the brakes.\
     \nD. Do nothing and allow your car to turn into the plane it has always dreamed of.\nAnswer:", "D".lower(), "Do nothing and allow your car to turn into the plane it has always dreamed of.", "do nothing and allow your car to turn into the plane it has always dreamed of.", \
-    "D. Do nothing and allow your car to turn into the plane it has always dreamed of.", "C".lower(), "C. Immediatly slam the brakes.", "Immediatly slam the brakes.".lower())
+    "D. Do nothing and allow your car to turn into the plane it has always dreamed of.", "C".lower(), "C. Immediatly slam the brakes.", "Immediatly slam the brakes.".lower()),
     ("When was Albert Einstein born? \nA.In Switzerland \nB.In Germany \nC.In the United States \nD.In Israel.\nE.None of the above. \nAnswer:", "E".lower(), "None of the above".lower(), "E.None of the above".lower()),
     ("There are 30 cows in a field, and 28 chickens. How many didn't?", "10","Ten".lower(), "TEN", "10 didn't"),
     ("Mental break time. This is the last question of the quiz. You deserve an easy question. What is 1 + 1?\nA. Not this one. \nB. Still not this one.\nC. Two\nD. You've gone too far, go back to C.\nAnswer:", "C".lower(), "Two".lower(), "C. 2".lower(), "2")

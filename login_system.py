@@ -26,9 +26,7 @@ def login(username, password):
     # return username == "ICYLGR01" and password == "Cocoban123"   # det ska läggas in från dictionaryn och sedan kunna användas
     # om username är ICYLGR01 och lösenordet är Cocoban123 returnera True, annars returnera False
 
-def register(username,password):
-    username = input("Write an username:")
-    password = input("Write a password:")
+def register(username, password):
     user_dictionary = {"username": username, "password": password}
     return users.append(user_dictionary)
 
@@ -41,12 +39,19 @@ while login_in:
          quiz.start()  
          # quizet startas
     else:
-        tryagain_register = input("Incorrect, you want to try again? Yes or no?")
-        if tryagain_register == "yes".lower():
+        tryagain = input("Incorrect, you want to try again? Yes or no?")
+        if tryagain == "yes".lower():
             login_in = True
          # startas om
         
-        if tryagain_register == "no".lower():
-            register(username,password)
-            quiz.start() 
-        # användarnamn och lösenord registreras
+        if tryagain == "no".lower():
+            not_login = input("Do you want to register and continue to the quiz, only register or none of the above?")
+            if not_login == "Register and continue to the quiz".lower():
+                register(username, password)
+                quiz.start() 
+            if not_login == "Only register".lower():
+                register(username, password)
+                break
+            if not_login == "None of the above".lower():
+                print("Goodbye! Hope to see you soon")
+                break
