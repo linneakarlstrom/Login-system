@@ -1,5 +1,21 @@
 import quiz
 
+users = [
+    {
+        "username": "ICYLGR01",
+        "password": "Cocoban123", 
+    },
+    {
+        "username": "skalman",
+        "password": "fruktsallad"
+    }
+]
+
+# def register(username,password):
+#     username = input("Username:")
+#     password = input("Password:")
+#     return # de nya keyvalue paren läggs in i users
+
 def login(username, password):
     for u in users:
         if u["username"] == username and u["password"] == password:
@@ -11,7 +27,8 @@ def login(username, password):
     # om username är ICYLGR01 och lösenordet är Cocoban123 returnera True, annars returnera False
 
 def register(username, password):
-    thedata = {"username": username, "password": password}
+    user_dictionary = {"username": username, "password": password}
+    return users.append(user_dictionary)
     import csv
     with open('data.csv', 'w', newline='') as file:
         writer = csv.writer(file)    
