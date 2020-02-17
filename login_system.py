@@ -13,7 +13,7 @@ def login(username, password):
 def register(username, password):
     thedata = {"username": username, "password": password}
     import csv
-    with open('data.csv', 'w+') as file:
+    with open('data.csv', 'w', newline='') as file:
         writer = csv.writer(file)    
 
 login_in = True
