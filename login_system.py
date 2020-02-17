@@ -22,7 +22,7 @@ def login(logusername, logpassword):
     with open('data.csv', 'r') as file:
         reader = csv.reader(file)
         for row in reader:
-            return logusername and logpassword
+            retur
 
     # return username == users[0+1] password == users[0+1+1]
     # return username == "ICYLGR01" and password == "Cocoban123"   # det ska läggas in från dictionaryn och sedan kunna användas
