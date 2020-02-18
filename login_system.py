@@ -1,6 +1,5 @@
 import quiz
 import csv
-login_in = True
 # Programmet ska ej läsa in från listan utan från csv-filen
 #  users = [
 #     {
@@ -19,10 +18,10 @@ login_in = True
 #     return # de nya keyvalue paren läggs in i users
 
 def login(logusername, logpassword):
+    logusername = input("Enter your username: \n")
+    logpassword = input("Enter your password: \n")
     with open('data.csv', 'r') as file:
         reader = csv.reader(file)
-        for row in reader:
-            retur
 
     # return username == users[0+1] password == users[0+1+1]
     # return username == "ICYLGR01" and password == "Cocoban123"   # det ska läggas in från dictionaryn och sedan kunna användas
@@ -38,13 +37,11 @@ def register(username, password):
         writer = csv.writer(file) 
         return  writer.writerows(user_list)   
 
-
+login_in = True
 while login_in:
-    username = input("Enter your username: \n")
-    password = input("Enter your password: \n")
-    if login(username, password):
-         print("Welcome", username, ", You may now progress to the quiz \n") # du lyckades
-         quiz.start()  
+    if login(logusername, logpassword):
+        print("Welcome", logusername, ", You may now progress to the quiz \n") # du lyckades
+        quiz.start()  
          # quizet startas
     else:
         tryagain = input("Incorrect, you want to try again? Yes or no? \n")
