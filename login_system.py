@@ -1,5 +1,6 @@
 import quiz
 import csv
+# import sys
 # Programmet ska ej läsa in från listan utan från csv-filen
 #  users = [
 #     {
@@ -22,10 +23,13 @@ import csv
     # om username är ICYLGR01 och lösenordet är Cocoban123 returnera True, annars returnera False
 
 def create_user(username,password):
-    # with open('data.csv', 'r') as file:
-    #     reader = csv.reader(file)  
-    # if :
-    #     print("found")
+    with open('data.csv', 'r') as file:
+        reader = csv.reader(file)  
+    
+
+    #  den ska läsa som en dictionary och därmed printa ut de values som man vill ha eller
+    # förstår inte varför den läser rätt men när jag kollar ifall den finns där när jag kör programmet som vanligt finns det inte
+    # print("found")
     # else:
     with open('data.csv', 'a', newline='') as file:
         writer = csv.writer(file) 
