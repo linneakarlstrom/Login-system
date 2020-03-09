@@ -29,8 +29,7 @@ def create_user(username,password):
 
     #  den ska läsa som en dictionary och därmed printa ut de values som man vill ha eller
     # förstår inte varför den läser rätt men när jag kollar ifall den finns där när jag kör programmet som vanligt finns det inte
-    # print("found")
-    # else:
+# prova att se ifall du kan använda dictwriter med user input, som isabel försöker göra, KOLLA IN TEST FILEN KAN HA LÖST DET
     with open('data.csv', 'a', newline='') as file:
         writer = csv.writer(file) 
         user_list = [[username, password]]
