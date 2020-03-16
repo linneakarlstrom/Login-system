@@ -22,30 +22,28 @@ import csv
     # return username == "ICYLGR01" and password == "Cocoban123"   # det ska läggas in från dictionaryn och sedan kunna användas
     # om username är ICYLGR01 och lösenordet är Cocoban123 returnera True, annars returnera False
 
-def create_user(username,password):
-    with open('data.csv', 'r') as file:
-        reader = csv.reader(file)  
-    
 
-    #  den ska läsa som en dictionary och därmed printa ut de values som man vill ha eller
-    # förstår inte varför den läser rätt men när jag kollar ifall den finns där när jag kör programmet som vanligt finns det inte
-# prova att se ifall du kan använda dictwriter med user input, som isabel försöker göra, KOLLA IN TEST FILEN KAN HA LÖST DET
-    with open('data.csv', 'a', newline='') as file:
-        writer = csv.writer(file) 
-        user_list = [[username, password]]
-        return writer.writerows(user_list)
+
+# En funktion ska ta emot inputs och en funktion ska skicka till csvfilen. Den ena ska kalla på den andre.
+
+def create_user():
+    username = input("New username: \n")
+    password = input("New password: \n")
+    with open('data.csv', 'a', newline='') as csvfile:
+        fieldnames = ['Username', ' Password']
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerow({fieldnames[0]: username, fieldnames[1]: password})
 
 
 def register():
-    username = input("Enter your username: \n")
-    password = input("Enter your password: \n")
-    create_user(username, password)
+    your_username = input("Enter your username: \n")
+    your_password = input("Enter your password: \n")
+    with open('data.csv','r') as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+           print(row)
     
-
-    
-register()
-    
-
 # login_in = True
 # while login_in:
 #     username = input("Enter your username: \n")
