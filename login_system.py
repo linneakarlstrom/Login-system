@@ -22,27 +22,33 @@ import csv
     # return username == "ICYLGR01" and password == "Cocoban123"   # det ska läggas in från dictionaryn och sedan kunna användas
     # om username är ICYLGR01 och lösenordet är Cocoban123 returnera True, annars returnera False
 
-
-
-# En funktion ska ta emot inputs och en funktion ska skicka till csvfilen. Den ena ska kalla på den andre.
-
 def create_user():
-    username = input("New username: \n")
-    password = input("New password: \n")
+    new_username = input("Choose your username: \n ")
+    new_password = input("Choose your password: \n")
     with open('data.csv', 'a', newline='') as csvfile:
         fieldnames = ['Username', ' Password']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
-        writer.writerow({fieldnames[0]: username, fieldnames[1]: password})
+        writer.writerow({fieldnames[0]: new_username, fieldnames[1]: new_password})
 
 
-def register():
-    your_username = input("Enter your username: \n")
-    your_password = input("Enter your password: \n")
+def login():
+    username = input("Enter your username: \n")
+    password = input("Enter your password: \n")
     with open('data.csv','r') as file:
         reader = csv.DictReader(file)
         for row in reader:
-           print(row)
+            if username == row['username'] and password == row['password']:
+                quiz.start()
+            if username != row['username'] or password != row['password']:
+                input("Do you want to try again? Or would you like to create a new login?/ Try again, create login")
+                create_user()
+
+
+        
+    
+
+
     
 # login_in = True
 # while login_in:
