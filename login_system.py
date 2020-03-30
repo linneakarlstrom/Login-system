@@ -3,7 +3,7 @@ import csv
 
 
 def create_user():
-    print("CREATE YOUR ACCOUNT")
+    print("\nCREATE YOUR ACCOUNT")
     new_username = input("Choose your username: ")
     new_password = input("Choose your password: ")
     with open('data.csv', 'a', newline='') as csvfile:
@@ -22,12 +22,16 @@ def user_exists(username, password):
                 return False
 
 def login():
-    print("LOGIN WITH YOUR USERNAME AND PASSWORD")
+    print("\nLOGIN WITH YOUR USERNAME AND PASSWORD")
     username = input("Enter your username: \n")
     password = input("Enter your password: \n")
     if user_exists(username, password):
         quiz.start()
     else:
-        create_user()
+        choose = input("Do you want to try again or would you like to create a new user? \n [again / create]\n")
+        if choose == "again":
+            login()
+        if choose == "create":
+            create_user()
 
 login()
