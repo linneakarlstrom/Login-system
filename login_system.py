@@ -23,12 +23,12 @@ def user_exists(username, password):
 
 def login():
     print("\nLOGIN WITH YOUR USERNAME AND PASSWORD")
-    username = input("Enter your username: \n")
-    password = input("Enter your password: \n")
+    username = input("Enter your username: ")
+    password = input("Enter your password: ")
     if user_exists(username, password):
         quiz.start()
     else:
-        choose = input("Do you want to try again or would you like to create a new user? \n [again / create]\n")
+        choose = input("Do you want to try again or would you like to create a new user? \n[again / create]\n")
         if choose == "again":
             login()
         if choose == "create":
