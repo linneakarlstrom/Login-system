@@ -15,11 +15,11 @@ def create_user():
 def user_exists(username, password):
     with open('data.csv','r') as file:
         reader = csv.DictReader(file)
+        exists = False
         for row in reader:
             if username == row['Username'] and password == row['Password']:
-                return True
-            else:
-                return False
+                exists = True
+        return exists
 
 def login():
     print("\nLOGIN WITH YOUR USERNAME AND PASSWORD")
