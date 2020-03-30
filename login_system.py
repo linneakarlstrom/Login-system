@@ -3,8 +3,9 @@ import csv
 
 
 def create_user():
-    new_username = input("Choose your username: \n")
-    new_password = input("Choose your password: \n")
+    print("CREATE YOUR ACCOUNT")
+    new_username = input("Choose your username: ")
+    new_password = input("Choose your password: ")
     with open('data.csv', 'a', newline='') as csvfile:
         fieldnames = ['Username', 'Password']
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
@@ -21,6 +22,7 @@ def user_exists(username, password):
                 return False
 
 def login():
+    print("LOGIN WITH YOUR USERNAME AND PASSWORD")
     username = input("Enter your username: \n")
     password = input("Enter your password: \n")
     if user_exists(username, password):
